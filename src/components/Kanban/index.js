@@ -19,7 +19,7 @@ class KanbanData extends Component {
   }
   fetchData = async () => {
     let response = await axios.get('http://194.67.210.80/api/');
-    console.log(response)
+    // console.log(response)
 
     this.setState({
       data: mockData

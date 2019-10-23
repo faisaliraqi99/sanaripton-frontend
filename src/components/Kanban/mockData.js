@@ -2,12 +2,12 @@ const data = {
   todo: [
     {
       id: "id1",
-      title: "Trouble",
+      title: "Мусор валяется и бесит",
       category: "tazalyk"
     },
     {
       id: "id2",
-      title: "Trouble2",
+      title: "Пропал люк",
       category: "tazalyk"
     }
   ],

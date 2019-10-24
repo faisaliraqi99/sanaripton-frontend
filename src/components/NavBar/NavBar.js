@@ -11,8 +11,8 @@ class NavBar extends Component {
         <Link to="/" className="nav">HOME</Link>
         <Link to="/kanban" className="nav">Доска</Link>
         <a className="nav" href="#">Бот</a>
-        {/* <Link to="/stats" className="nav">Статистика</Link> */}
-        {/* <Link to="/about" className="nav">О нас</Link> */}
+        <Link to="/stats" className="nav">Статистика</Link>
+        <Link to="/about" className="nav">О нас</Link>
         </div>
 
         <div className="header-right">

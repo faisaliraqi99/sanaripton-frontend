@@ -1,5 +1,4 @@
 .home-page .default-container {
-  /* max-width: 800px; */
   display: flex;
   align-items: flex-start;
   flex-wrap: wrap;
@@ -7,20 +6,17 @@
   padding-top: 20px;
 }
 
-/* @media (max-width: ) {
-
-} */
-
 .home-item {
   position: relative;
   width: 32%;
   height: 250px;
   border-radius: 20px;
   margin-bottom: 15px;
-  /* border: 2px solid #c7c7c7; */
+  border: 2px solid #fff;
   background-color: rgba(255,255,255, .2);
   box-sizing: border-box;
   cursor: pointer;
+  transition: .3s;
 }
 
 .home-img {
@@ -30,4 +26,50 @@
   background: url(../../assets/img/troubles/test1.jpg);
   background-position: center;
   background-size: cover;
+}
+
+.home-item__description {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  max-height: 30%;
+  padding: 0 20px;
+  box-sizing: border-box;
+  border-radius: 0 0 20px 20px;
+  background-color: transparent;
+  color: #fff;
+}
+
+.home-item:hover {
+  color: #182139;
+  background-color: rgba(255,255,255, .4);
+}
+
+.home-item__title {
+  font-weight: 400;
+  margin: 0;
+}
+
+.home-likes {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  padding: 4px 8px;
+  transition: .2s;
+  color: #fff;
+  transition: .3s;
+}
+
+.home-likes:hover {
+  background: rgba(220, 50, 50) !important;
+}
+
+.home-like {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  padding: 4px 8px;
 }

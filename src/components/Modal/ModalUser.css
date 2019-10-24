@@ -6,8 +6,60 @@
 
 .modal-img-container {
   text-align: center;
-  max-width: 720px;
-  max-height: 720px;
-  margin: 0 auto;
+  margin: 0 auto 20px auto;
   overflow: hidden;
+}
+
+.modal-img {
+  max-height: 250px;
+  object-fit: contain;
+}
+
+.modal-info {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 200;
+  font-size: 1.5rem;
+}
+
+.modal-info__likes, .modal-info__category, .modal-info__date {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  /* border: 2px solid #182139; */
+  background-color: #182139a1;
+  padding: 5px 0;
+  width: 200px;
+  cursor: pointer;
+}
+
+.modal-info__category {
+  text-transform: uppercase;
+}
+
+.modal-info__likes-ico {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin-top: 3px;
+  margin-left: 5px;
+}
+
+.modal-social {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.modal-social__icon {
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.modal-social__icon:nth-child(3) {
+  margin-right: 0;
+}
+
+.modal-social__icon img {
+  width: 40px;
 }

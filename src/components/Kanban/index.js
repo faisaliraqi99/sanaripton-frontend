@@ -24,17 +24,19 @@ class KanbanData extends Component {
     this.fetchData()
   }
   fetchData = async () => {
-    let responseTodo = await axios.get('http://194.67.210.80/api/', {params: {'status': 1}});
-    let responseDoing = await axios.get('http://194.67.210.80/api/', { params: {'status': 2}});
-    let responseReady = await axios.get('http://194.67.210.80/api/', { params: {'status': 3}});
+    const size = {
+      page_size: 20,
+    }
 
-    console.log(responseDoing)
+    let responseTodo = await axios.get('http://194.67.210.80/api/', {params: {...size, 'status': 1}});
+    let responseDoing = await axios.get('http://194.67.210.80/api/', { params: {...size, 'status': 2}});
+    let responseReady = await axios.get('http://194.67.210.80/api/', { params: {...size, 'status': 3}});
 
     this.setState({
       data: {
-        todo: responseTodo.data,
-        doing: responseDoing.data,
-        done: responseReady.data
+        todo: responseTodo.data.results,
+        doing: responseDoing.data.results,
+        done: responseReady.data.results
       }
     })
   }

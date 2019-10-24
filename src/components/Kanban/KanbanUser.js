@@ -5,14 +5,20 @@ import Card from './Card';
 
 class KanbanUser extends React.Component {
   state = {
-    modalStatus: false
+    modalStatus: false,
+    modalData: {}
   }
-  modalStatusChanger = () => {
+  handleCardClick = (item, index) => {
+    this.modalStatusChanger(item, index, true);
+  }
+  modalStatusChanger = (item, index, isUpdate = false) => {
+    const itemWithIndex = {...item, index};
     this.setState({
-      modalStatus: !this.state.modalStatus
+      modalStatus: isUpdate ? true : false,
+      modalData: itemWithIndex,
     });
   }
-  changeData = (item, field, index) => {
+  changeData = (item, field, index, type) => {
     const newData = {...this.props.data}
     const status = item.status;
 
@@ -37,15 +43,31 @@ class KanbanUser extends React.Component {
     else if (status === 3) ++newData.done[index][field]
 
     this.props.changeData(newData);
+    let newItem = null;
+
+    switch (`${status}`){
+      case '1': newItem = newData.todo[index]
+      break;
+      case '2': newItem = newData.doing[index]
+      break;
+      case '3': newItem = newData.done[index]
+      break;
+      default: return
+    }
+    // ТЕСТИМ
+    this.modalStatusChanger(newItem, index, type === 'card' ? false : true);
   }
   render(){
     const todo = this.props.data.todo;
     const doing = this.props.data.doing;
     const ready = this.props.data.done;
     const modalStatus = this.state.modalStatus;
+    const modalData = this.state.modalData;
     return (
     <>
         <ModalUser
+          data={modalData}
+          changeData={this.changeData}
           modalStatusChanger={this.modalStatusChanger}
           modalStatus={modalStatus}
         />
@@ -57,7 +79,7 @@ class KanbanUser extends React.Component {
               <Card
                 isTodo
                 changeData={this.changeData}
-                handleClick={this.modalStatusChanger}
+                handleClick={this.handleCardClick}
                 data={todo}
               />
             </div>
@@ -68,7 +90,7 @@ class KanbanUser extends React.Component {
               <Card
                 isDoing
                 changeData={this.changeData}
-                handleClick={this.modalStatusChanger}
+                handleClick={this.handleCardClick}
                 data={doing}
               />
             </div>
@@ -78,7 +100,7 @@ class KanbanUser extends React.Component {
               <div className="col-title">Готово</div>
               <Card
                 isReady
-                handleClick={this.modalStatusChanger}
+                handleClick={this.handleCardClick}
                 data={ready}
               />
             </div>

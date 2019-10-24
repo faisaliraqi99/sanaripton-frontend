@@ -11,8 +11,20 @@ const data = {
       category: "tazalyk"
     }
   ],
-  doing: [],
-    done: []
+  doing: [
+    {
+      id: "id3",
+      title: "Пропал люк",
+      category: "tazalyk"
+    }
+  ],
+  done: [
+    {
+      id: "id4",
+      title: "Пропал люк",
+      category: "tazalyk"
+    }
+  ]
 }
 
 

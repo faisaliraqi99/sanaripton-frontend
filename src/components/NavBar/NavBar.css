@@ -1,20 +1,18 @@
 .header {
-  height: 10vh;
+  /* height: 50px; */
   display: flex;
   flex-wrap: wrap;
   background-color: #272e48;
-  box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.2);
 }
 
 .navbar{
   width: 50%;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   flex-wrap: wrap;
 }
 .nav{
-  height: 100%;
-  width: 25%;
+  padding: 20px 60px;
   display: flex;
   justify-content: center;
   align-items: center;

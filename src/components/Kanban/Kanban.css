@@ -1,6 +1,7 @@
 .kanban-container {
   max-width: 1080px;
   margin: 0 auto;
+  transition: .2s;
 }
 
 .kanban {
@@ -40,6 +41,14 @@
   transition: background-color .2s;
 }
 
+.card-ready {
+  align-items: center;
+}
+
+.card-ready .card-content__likes {
+  display: none;
+}
+
 .card-client:hover {
   background-color: #182139;
   cursor: pointer;
@@ -54,6 +63,8 @@
   border-radius: 30px 30px 0 0;
   border-bottom: 2px solid;
   box-sizing: border-box;
+  text-transform: uppercase;
+  font-weight: 600;
 }
 
 .col-first > .col-title {
@@ -69,17 +80,14 @@
 }
 
 .col-first > .card-client {
-  /* background-color: #FF3F3F; */
   border: 2px solid #FF3F3F;
 }
 
 .col-second > .card-client {
-  /* background-color: #FFB822; */
   border: 2px solid #FFB822;
 }
 
 .col-third > .card-client {
-  /* background-color: #10B759; */
   border: 2px solid #10B759;
 }
 
@@ -97,7 +105,7 @@ p {
 }
 
 .card-content__org {
-
+  text-transform: uppercase;
 }
 
 .card-content__title {
@@ -110,12 +118,23 @@ p {
   align-items: center;
   border-radius: 5px;
   padding: 4px 8px;
-  background: #FF3F3F;
   transition: .2s;
 }
 
-.card-content__likes:hover {
-  background: rgb(209, 29, 29)
+.col-first .card-content__likes {
+  background: #FF3F3F;
+}
+
+.col-first .card-content__likes:hover {
+  background: rgb(209, 29, 29);
+}
+
+.col-second .card-content__likes {
+  background: #FFB822;
+}
+
+.col-second .card-content__likes:hover {
+  background: #db9b13;
 }
 
 .card-content__likes-icon {
@@ -127,10 +146,11 @@ p {
 .card-content__likes-num {
   margin-left: 5px;
   font-size: 12px;
+  text-transform: uppercase;
 }
 
 .card-photo {
-  width: 80px;
+  min-width: 80px;
   height: 80px;
   border-radius: 20px;
 }

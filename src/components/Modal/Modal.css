@@ -1,0 +1,35 @@
+.modal-background {
+  position: absolute;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 40px;
+  box-sizing: border-box;
+  z-index: 1000;
+  transition: .5s;
+}
+
+.modal-background.active {
+  display: block;
+}
+
+.modal-container {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.modal {
+  position: relative;
+  width: 100%;
+  padding: 30px;
+  min-height: calc(100vh - 80px);
+  border-radius: 50px;
+  background-color: rgba(255,255,255, 0);
+  box-sizing: border-box;
+}
+
+
+.modal-background.active .modal {
+  background-color: rgba(255,255,255, .5);
+}

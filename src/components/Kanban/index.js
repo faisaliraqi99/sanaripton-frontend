@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import mockData from './mockData';
 
 import NavBar from '../NavBar/NavBar';
@@ -18,16 +18,16 @@ class KanbanData extends Component {
     this.fetchData()
   }
   fetchData = async () => {
-    let response = await axios.get('http://194.67.210.80/api/');
+    // let response = await axios.get('http://194.67.210.80/api/');
     // console.log(response)
-
+    console.log(mockData);
     this.setState({
       data: mockData
     })
   }
   render() {
     const data = this.state.data;
-
+    console.log(data);
     if(this.props.isAdmin) {
       return (
         <>

@@ -1,13 +1,33 @@
 import React, { Component } from 'react';
 
 import NavBar from '../NavBar/NavBar';
+import './home.css';
 
 class Home extends Component {
   render() {
     return (
-      <div>
+      <div className="home-page">
         <NavBar />
-        HOME PAGE
+        <div className="default-container">
+          <div className="home-item">
+            <div className="home-img"></div>
+          </div>
+          <div className="home-item">
+            <div className="home-img"></div>
+          </div>
+          <div className="home-item">
+            <div className="home-img"></div>
+          </div>
+          <div className="home-item">
+            <div className="home-img"></div>
+          </div>
+          <div className="home-item">
+            <div className="home-img"></div>
+          </div>
+          <div className="home-item">
+            <div className="home-img"></div>
+          </div>
+        </div>
       </div>
     );
   }

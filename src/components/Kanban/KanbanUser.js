@@ -2,8 +2,6 @@ import React from 'react';
 
 import ModalUser from '../Modal/ModalUser';
 import Card from './Card';
-import likeIco from '../../assets/img/chevron-up.svg';
-import tazalykImg from '../../assets/img/orglogos/tazalyk.jpg';
 
 class KanbanUser extends React.Component {
   state = {
@@ -13,6 +11,32 @@ class KanbanUser extends React.Component {
     this.setState({
       modalStatus: !this.state.modalStatus
     });
+  }
+  changeData = (item, field, index) => {
+    const newData = {...this.props.data}
+    const status = item.status;
+
+    let likedField = JSON.parse(localStorage.getItem('liked'));
+    let liked = false;
+
+    if (likedField === null) {
+      localStorage.setItem('liked', JSON.stringify([]))
+      likedField = JSON.parse(localStorage.getItem('liked'));
+    } else {
+      likedField.forEach(element => {
+        if (element === item.id) liked = true
+      });
+    }
+
+    if (liked) return null
+    else likedField.push(item.id);
+    localStorage.setItem('liked', JSON.stringify(likedField))
+
+    if(status === 1) ++newData.todo[index][field]
+    else if(status === 2) ++newData.doing[index][field]
+    else if (status === 3) ++newData.done[index][field]
+
+    this.props.changeData(newData);
   }
   render(){
     const todo = this.props.data.todo;
@@ -32,10 +56,9 @@ class KanbanUser extends React.Component {
               <div className="col-title">К выполнению</div>
               <Card
                 isTodo
+                changeData={this.changeData}
                 handleClick={this.modalStatusChanger}
                 data={todo}
-                likeIco={likeIco}
-                tazalykImg={tazalykImg}
               />
             </div>
           </div>
@@ -43,10 +66,10 @@ class KanbanUser extends React.Component {
             <div className="col-second">
               <div className="col-title">В процессе</div>
               <Card
+                isDoing
+                changeData={this.changeData}
                 handleClick={this.modalStatusChanger}
                 data={doing}
-                likeIco={likeIco}
-                tazalykImg={tazalykImg}
               />
             </div>
           </div>
@@ -57,8 +80,6 @@ class KanbanUser extends React.Component {
                 isReady
                 handleClick={this.modalStatusChanger}
                 data={ready}
-                likeIco={likeIco}
-                tazalykImg={tazalykImg}
               />
             </div>
           </div>

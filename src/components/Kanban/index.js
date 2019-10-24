@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-// import axios from 'axios';
-import mockData from './mockData';
+import axios from 'axios';
+// import mockData from './mockData';
 
 import NavBar from '../NavBar/NavBar';
 import './Kanban.css';
@@ -9,37 +9,60 @@ import KanbanUser from './KanbanUser';
 class KanbanData extends Component {
   state = {
     data: {
-      todo: [],
-      doing: [],
-      done: []
+      todo: [{
+        title: 'Загрузка'
+      }],
+      doing: [{
+        title: 'Загрузка'
+      }],
+      done: [{
+          title: 'Загрузка'
+      }]
     }
   }
   componentDidMount() {
     this.fetchData()
   }
   fetchData = async () => {
-    // let response = await axios.get('http://194.67.210.80/api/');
-    // console.log(response)
-    console.log(mockData);
+    let responseTodo = await axios.get('http://194.67.210.80/api/', {params: {'status': 1}});
+    let responseDoing = await axios.get('http://194.67.210.80/api/', { params: {'status': 2}});
+    let responseReady = await axios.get('http://194.67.210.80/api/', { params: {'status': 3}});
+
+    console.log(responseDoing)
+
     this.setState({
-      data: mockData
+      data: {
+        todo: responseTodo.data,
+        doing: responseDoing.data,
+        done: responseReady.data
+      }
+    })
+  }
+  changeData = (newData) => {
+    this.setState({
+      data: newData
     })
   }
   render() {
     const data = this.state.data;
-    console.log(data);
     if(this.props.isAdmin) {
       return (
         <>
           <NavBar />
-          <KanbanUser data={data} />
+          <KanbanUser
+            changeData={this.changeData}
+            data={data}
+          />
         </>
       )
     } else {
       return (
         <>
           <NavBar />
-          <KanbanUser data={data} />
+          <KanbanUser
+            changeData={this.changeData}
+            data={data}
+          />
         </>
       )
     }

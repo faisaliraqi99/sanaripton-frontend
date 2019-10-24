@@ -27,7 +27,7 @@ class DashBoardDonut{
         this.theme = states.theme;
         this.backgroundColor = states.backgroundColor;
         this.subtitles = [{
-            text: 'задачи',
+            text: 'Задачи',
             verticalAlign: "center",
             fontColor: states.fontColor,
             dockInsidePlotArea: true

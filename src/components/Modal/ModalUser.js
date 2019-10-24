@@ -52,7 +52,7 @@ class ModalUser extends Component {
                 </div>
                 <div className="modal-info">
                   <div onClick={(event) => this.handleLike(event, data)} className="modal-info__likes">
-                    Поддержи
+                    Поддержали
                     <i className='modal-info__likes-ico' style={{ ...likeStyle, backgroundImage: `url(${likeIco})` }}></i>
                     {data.total_likes}
                   </div>

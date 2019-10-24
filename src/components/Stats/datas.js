@@ -1,7 +1,7 @@
 let states = {
-    fontColor: '#c7c7c7',
-    backgroundColor: "#182139",
-    theme: 'dark2',
+    fontColor: '#1e1e1e',
+    backgroundColor: "#f5f5f5",
+    theme: 'light1',
     dataPoints: [
         {name: 'выполняется', y: 0},
         {name: 'выполнено', y: 0},

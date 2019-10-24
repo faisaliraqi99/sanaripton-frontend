@@ -12,8 +12,8 @@
   height: 250px;
   border-radius: 20px;
   margin-bottom: 15px;
-  border: 2px solid #fff;
-  background-color: rgba(255,255,255, .1);
+  border: 2px solid #1e1e1e;
+  background-color: rgba(0,0,0, .1);
   box-sizing: border-box;
   cursor: pointer;
   transition: .3s;
@@ -37,12 +37,12 @@
   padding: 0 20px;
   box-sizing: border-box;
   border-radius: 0 0 20px 20px;
-  color: #fff;
+  color: #1e1e1e;
 }
 
 .home-item:hover {
   color: #182139;
-  background-color: rgba(255,255,255, .4);
+  background-color: rgba(0,0,0, .4);
 }
 
 .home-item__title {
@@ -57,7 +57,7 @@
   border-radius: 5px;
   padding: 4px 8px;
   transition: .2s;
-  color: #fff;
+  color: #1e1e1e;
   transition: .3s;
 }
 

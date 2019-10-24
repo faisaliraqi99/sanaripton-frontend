@@ -31,7 +31,7 @@
 }
 
 .modal-background::-webkit-scrollbar-track{
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	-webkit-box-shadow: inset 0 0 6px rgba(255,255,255,0.3);
 	border-radius: 10px;
 	background-color: transparent;
 }
@@ -45,8 +45,8 @@
   position: absolute;
   top: 0;
 	border-radius: 10px;
-  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-	background-color: rgba(0,0,0, .2);
+  -webkit-box-shadow: inset 0 0 6px rgba(255,255,255,.3);
+	background-color: rgba(255,255,255, .2);
 }
 
 .modal-background.active .modal {

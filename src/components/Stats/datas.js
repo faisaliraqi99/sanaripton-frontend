@@ -32,20 +32,25 @@ class DashBoardDonut{
             fontColor: states.fontColor,
             dockInsidePlotArea: true
         }];
+        this.legend = {
+            cursor: "pointer",
+        };
         this.data = [{
             type: "doughnut",	
+            radius: 50,
             showInLegend: true,
             indexLabel: "{name}: {y}",
-            yValueFormatString: "#,###'%'",
+            yValueFormatString: "#,###",
+            indexLabel: "{name} - #percent%",
             dataPoints: this.dataPoints
-        }]
+        }];
     }
 }
 
 let donutsProps=[
     {
         title: 'Мэрия',
-        dataPointsY: [30,30,40]
+        dataPointsY: [300,300,40]
     }
 ]
 

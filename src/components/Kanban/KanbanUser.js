@@ -54,7 +54,6 @@ class KanbanUser extends React.Component {
       break;
       default: return
     }
-    // ТЕСТИМ
     this.modalStatusChanger(newItem, index, type === 'card' ? false : true);
   }
   render(){
@@ -65,12 +64,12 @@ class KanbanUser extends React.Component {
     const modalData = this.state.modalData;
     return (
     <>
-        <ModalUser
-          data={modalData}
-          changeData={this.changeData}
-          modalStatusChanger={this.modalStatusChanger}
-          modalStatus={modalStatus}
-        />
+      <ModalUser
+        data={modalData}
+        changeData={this.changeData}
+        modalStatusChanger={this.modalStatusChanger}
+        modalStatus={modalStatus}
+      />
       <div style={modalStatus ? { filter: 'blur(20px)' } : {} } className="kanban-container" >
         <div className="kanban">
           <div className="kanban__col">

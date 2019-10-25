@@ -13,6 +13,9 @@ class Stats extends Component {
         <NavBar />
         <div className='default-container stats-body'>
           <DoughnutChart options={optnsOfDonut[0]}/>
+          <div style={{'height': '100px'}}>
+          </div>
+          <DoughnutChart options={optnsOfDonut[1]}/>
         </div>
       </>
     );
